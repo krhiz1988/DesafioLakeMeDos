@@ -21,7 +21,7 @@ app.get("/posts", async (req, res) => {
     const posts = await obtenerPosts();
     res.json(posts);
   } catch (error) {
-    res.status(500).send(error);
+    res.status(500).send('Ha ocurrido un problema al mostrar los posts');
   }
 });
 
@@ -31,7 +31,7 @@ app.put("/posts/like/:id", async (req, res) => {
     await editarPost(id);
     res.send("Post actualizado con éxito");
   } catch (error) {
-    res.status(500).send(error);
+    res.status(500).send('Ha ocurrido un problema al actualizar likes');
   }
 });
 
@@ -43,7 +43,7 @@ app.delete("/posts/:id", async (req, res) => {
 
     res.send("Post borrado con éxito");
   } catch (error) {
-    res.status(500).send(error);
+    res.status(500).send('Ha ocurrido un problema al borrar post');
   }
 });
 
@@ -55,7 +55,7 @@ app.post("/posts", async (req, res) => {
 
     res.send("Post agregado con éxito");
   } catch (error) {
-    res.status(500).send(error);
+    res.status(500).send('Ha ocurrido un problema al agregar un post');
   }
 });
 

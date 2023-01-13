@@ -20,7 +20,7 @@ const agregarPost = async (titulo, url, descripcion) => {
 };
 
 const editarPost = async (id) => {
-  const consulta = "UPDATE posts SET likes= likes + 1 WHERE id=$1";
+  const consulta = "UPDATE posts SET likes=likes+1 WHERE id=$1";
   const data = [id];
   const response = await clientBD.query(consulta, data);
   return response;
